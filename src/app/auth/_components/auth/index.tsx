@@ -60,6 +60,7 @@ const Auth = () => {
 
           <AuthItem className="text-center py-3">
             <GoogleAuth
+              variant={variant}
               text={
                 variant === "login"
                   ? "Login com google"

@@ -75,6 +75,14 @@
     }
   }
 
-  .bg-one{
-    background-color: #445E6D;
+  html, body, :root {
+    list-style: none;
   }
+.bg-one{
+  background-color: #445E6D;
+}
+
+.bg-gradient{
+  background: rgb(77,114,132);
+  background: radial-gradient(circle, rgba(77,114,132,1) 0%, rgba(28,56,69,1) 50%);
+}
