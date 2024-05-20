@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/form";
 
 interface FormLoginProps {
-  onSubmit: () => void;
+  onSubmit: (values: object) => void;
 }
 
 const formSchema = z.object({

@@ -10,8 +10,8 @@ import {
   AuthSpanButton,
   AuthTitle,
 } from "./components";
-import GoogleAuth from "@/components/google-auth";
 import { useCallback, useState } from "react";
+import GoogleAuth from "@/components/google-auth";
 import FormLogin from "@/components/auth/form-login";
 import FormRegister from "@/components/auth/form-register";
 
@@ -24,7 +24,7 @@ const Auth = () => {
     );
   }, []);
 
-  const onSubmit = async (values) => {
+  const onSubmit = async (values: object) => {
     console.log("values", values);
     try {
       // toast.success("Login com sucesso!")
