@@ -53,16 +53,22 @@ export function AsideHomeLogo ({ children, className }: AsideHomeGenericProps ) 
     )
 }
 
+export function AsideHomeUserContainer ({ children, className }: AsideHomeGenericProps ) {
+    return(
+        <div className={cn("flex justify-center overflow-hidden items-end h-full", className)}>{children}</div>
+    )
+}
+
 export function AsideHomeUser ({ children, className }: AsideHomeGenericProps ) {
     return(
-        <div className={cn("h-full flex items-end justify-center", className)}>{children}</div>
+        <div className={cn("w-[50px] h-[50px] overflow-hidden flex items-center justify-center", className)}>{children}</div>
     )
 }
 
 export function AsideHomeLink ({ children, className, href, active }: AsideHomeLinkProps ) {
     return(
         <li>
-            <Link className={cn(`flex flex-col justify-center items-center ${active ? "font-bold text-white" : "font-normal text-gray-400"}`, className)}  href={href}>
+            <Link className={cn(`flex flex-col justify-center items-center ${active ? "font-bold text-white border-b-2" : "font-normal text-gray-400"}`, className)}  href={href}>
                 {children}
             </Link>
         </li>

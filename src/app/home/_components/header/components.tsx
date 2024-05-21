@@ -19,7 +19,7 @@ type HeaderHomeLinkProps =  {
 
 export function HeaderHomeComponent ({ children, className }: HeaderHomeGenericProps ) {
     return(
-        <section className={cn("w-full h-[70px]", className)}>{children}</section>
+        <section className={cn("w-full min-h-[60px] max-h-[60px]", className)}>{children}</section>
     )
 }
 
@@ -50,7 +50,7 @@ export function HeaderHomeItems ({ children, className }: HeaderHomeGenericProps
 export function HeaderHomeLink ({ children, className, href, active }: HeaderHomeLinkProps ) {
     return(
         <li>
-            <Link className={cn(`text-white ${active ? "font-bold" : "font-normal"}`, className)}  href={href}>
+            <Link className={cn(`text-white ${active ? "font-bold border-b-2" : "font-normal"}`, className)}  href={href}>
                 {children}
             </Link>
         </li>
