@@ -1,3 +1,5 @@
+"use client"
+
 import { Calendar } from "@/components/ui/calendar";
 import { useState } from "react";
 import { cn } from "./lib/utils";

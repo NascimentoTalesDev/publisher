@@ -1,3 +1,5 @@
+import { auth } from "@/services/auth";
+import EmailForm from "@/components/home/profile/email-form";
 import NameForm from "@/components/home/profile/name-form";
 import {
   Sheet,
@@ -7,7 +9,10 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-const Profile = () => {
+const Profile = async() => {
+  // const session = await auth()
+  // if (!session.user) return null
+
   return (
     <Sheet>
       <SheetTrigger className="px-2 hover:bg-accent w-full text-left py-1 cursor-default ">Perfil</SheetTrigger>
@@ -17,9 +22,9 @@ const Profile = () => {
             Perfil
           </SheetTitle>
           <div className="w-full bg-white h-full rounded-[20px] overflow-hidden">
-            <NameForm />
-            <NameForm />
-            <NameForm />
+            {/* <NameForm name={session?.user?.name} /> */}
+            {/* <EmailForm email={session?.user?.email} /> */}
+            {/* <NameForm /> */}
           </div>
         </SheetHeader>
       </SheetContent>

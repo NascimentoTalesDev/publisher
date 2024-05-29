@@ -19,7 +19,7 @@ type AsideHomeLinkProps =  {
 
 export function AsideHomeComponent ({ children, className }: AsideHomeGenericProps ) {
     return(
-        <section className={cn("w-[100px] h-full", className)}>{children}</section>
+        <section className={cn("min-w-[100px] max-w-[100px] h-full", className)}>{children}</section>
     )
 }
 

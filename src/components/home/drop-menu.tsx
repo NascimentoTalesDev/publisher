@@ -9,21 +9,23 @@ import {
 import AvatarUser from "./avatar";
 import { Button } from "../ui/button";
 import Profile from "@/app/home/_components/profile";
+import { signOut } from "next-auth/react";
+import GoogleLogout from "../google-logout";
 
 export function DropMenu() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button className="outline-none hover:bg-transparent" variant={"ghost"}>
+      <DropdownMenuTrigger className="overflow-hidden rounded-full" asChild>
+        <div className="cursor-pointer">
             <AvatarUser />
-        </Button>
+        </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>Minha conta</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <Profile />
         <DropdownMenuItem>Meu plano</DropdownMenuItem>
-        <DropdownMenuItem>Sair</DropdownMenuItem>
+        <GoogleLogout/>
       </DropdownMenuContent>
     </DropdownMenu>
   );

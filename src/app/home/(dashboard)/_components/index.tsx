@@ -1,10 +1,18 @@
 import CalendarComponent from "@/components/calendar-component";
 import { DashboardComponent, DashboardContainer, DashboardGrid, DashboardGridItem, DashboardItem } from "./components";
+import TitleH2 from "../../_components/title-h2";
+// import { auth } from "@/services/auth";
 
-const Dashboard = () => {
+const Dashboard = async() => {
+    // const session = await auth()
     return (
         <DashboardComponent>
             <DashboardContainer>
+                <div className="mb-3">
+                    {/* <TitleH2>Olá, {session?.user?.name}.</TitleH2> */}
+                    <TitleH2>Olá, NOME.</TitleH2>
+                </div>
+                
                 <DashboardGrid>
                     <DashboardGridItem className="col-span-3">
                         <DashboardItem className="bg-white mb-[20px]">

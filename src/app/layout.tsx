@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Thasadith } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
+import { ToastProvider } from "@/provider/toaster-provider";
 
-const font = Thasadith({ 
+const font = Roboto({ 
   subsets: ["latin"], 
   weight: ["400", "700"]
 });
@@ -20,7 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        {children}
+        <ToastProvider />
+          {children}
       </body>
     </html>
   );

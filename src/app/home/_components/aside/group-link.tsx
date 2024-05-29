@@ -16,9 +16,9 @@ const GroupLink = () => {
 
   return (
     <AsideHomeItems>
-      <AsideHomeLink active={pathname === "/home/layouts"} href="/home/layouts">
+      <AsideHomeLink active={checkPathname(pathname, "/home/layouts")} href="/home/layouts">
         <Layout />
-        Layout
+        Layouts
       </AsideHomeLink>
       <AsideHomeLink
         active={checkPathname(pathname, "/home/analytics")}
