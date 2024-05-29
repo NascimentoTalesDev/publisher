@@ -25,6 +25,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { updateActualLayout } from "@/app/home/layouts/new/actions";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 interface ActualLayoutFormProps {
   layouts: Layout[];
@@ -32,15 +33,20 @@ interface ActualLayoutFormProps {
 
 const ActualLayoutForm = ({ layouts }: ActualLayoutFormProps) => {
   const [actualLayout, setActualLayout] = useState<string>("");
+  const [isSavingActualLayout, setIsSavingActualLayout] = useState<boolean>(false);
   const layoutValues = useLayoutValues();
+  const router = useRouter()
 
   const onSubmit = async (id: string) => {
+    setIsSavingActualLayout(true)
     try {
       await updateActualLayout(id);
       toast.success("Layout atualizado");
+      router.refresh();
     } catch (error) {
       toast.error("Ocorreu um erro inesperado");
     }
+    setIsSavingActualLayout(false)
   };
 
   const onChange = async (id: string) => {
@@ -87,7 +93,7 @@ const ActualLayoutForm = ({ layouts }: ActualLayoutFormProps) => {
             variant={"default"}
             className="flex w-full"
           >
-            Salvar
+            {isSavingActualLayout ? "Salvando..." : "Salvar"}
           </Button>
         </div>
       </div>

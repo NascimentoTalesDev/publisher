@@ -12,6 +12,7 @@ import {
 import { Layout } from "@/types/Layout";
 import { Check, CircleX, Pencil, Trash } from "lucide-react"
 import Link from "next/link"
+import ActionsLayout from "./actions-form";
 
 interface TableLayoutFormProps {
   layouts: Layout[];
@@ -20,7 +21,6 @@ interface TableLayoutFormProps {
 export function TableLayoutForm({ layouts }: TableLayoutFormProps) {
   return (
     <Table>
-      <TableCaption>A list of your recent invoices.</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead>Nome</TableHead>
@@ -32,16 +32,9 @@ export function TableLayoutForm({ layouts }: TableLayoutFormProps) {
         {layouts.map((table) => (
           <TableRow key={table.id}>
             <TableCell>{table.name}</TableCell>
-            <TableCell>{table.actualLayout === true ? <Check className="w-4 h-4 text-green-500"/> : <CircleX className="w-4 h-4 text-red-400"/> }</TableCell>
+            <TableCell>{table.actualLayout === true ? <Check className="w-6 h-6 text-green-500"/> : <CircleX className="w-6 h-6 text-red-400"/> }</TableCell>
             <TableCell className="flex items-center justify-end gap-3">
-              <Link href={`/home/layouts/edit/${table.id}`}>
-                <Button className="p-3">
-                  <Pencil className="w-4 h-4 text-green-500"/>
-                </Button>
-              </Link>
-              <Button className="p-3">
-                <Trash className="w-4 h-4 text-red-400"/>
-              </Button>
+              <ActionsLayout id={table.id} />
             </TableCell>
           </TableRow>
         ))}
