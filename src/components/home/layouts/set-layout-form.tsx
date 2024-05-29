@@ -74,6 +74,7 @@ const SetLayoutForm = ({ userId }: SetLayoutFormProps) => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       await saveLayout(values as Layout)
+      
       toast.success("Layout salvo");
       router.refresh()
       router.replace("/home/layouts");
