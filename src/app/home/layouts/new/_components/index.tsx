@@ -4,14 +4,14 @@ import LayoutItem from "@/components/home/layouts/layout-item";
 import { auth } from "@/services/auth";
 
 const Layout = async () => {    
-    const session = await auth()
+    // const session = await auth()
 
     return (
         <LayoutComponent>
             <LayoutContainer>
                 <LayoutGrid>
                     <LayoutGridItem className="col-span-3">
-                        <SetLayoutForm userId={session?.user?.id || undefined} />
+                        <SetLayoutForm />
                     </LayoutGridItem>
                     <LayoutGridItem className="col-span-1">
                         <LayoutItem />

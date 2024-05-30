@@ -67,8 +67,8 @@ model VerificationToken {
 }
 
 model Layout {
-  id                   String @id @default(auto()) @map("_id") @db.ObjectId
-  name                 String @unique
+  id                   String  @id @default(auto()) @map("_id") @db.ObjectId
+  name                 String  @unique
   color                String
   secondColor          String
   thirdColor           String
@@ -79,7 +79,8 @@ model Layout {
   textColorOldPrice    String
   textColorActualPrice String
   textColorLink        String
-  actualLayout Boolean @default(false)
+  bgImage              String?
+  actualLayout         Boolean @default(false)
   // userId String @map("user_id") @db.ObjectId
   // user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 

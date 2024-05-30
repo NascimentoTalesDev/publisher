@@ -13,4 +13,5 @@ export type Layout = {
   textColorLink: string;
   userId: string;
   actualLayout: boolean;
+  bgImage?: string;
 };

@@ -62,9 +62,10 @@ const ActualLayoutForm = ({ layouts }: ActualLayoutFormProps) => {
 
   return (
     <div className="w-full flex items-center justify-between border p-2 bg-slate-200">
-      <div className="w-full grid grid-cols-2 ">
-        <div className=" flex items-center w-full">
+      <div className="w-full grid grid-cols-3 gap-3">
+        <div className="col-span-2 flex items-center">
           <Label className="w-[130px]">Layout atual:</Label>
+          <div className="flex w-full">
           <Select
             defaultValue={
               layouts.find((layout) => layout.actualLayout === true)
@@ -72,7 +73,7 @@ const ActualLayoutForm = ({ layouts }: ActualLayoutFormProps) => {
             }
             onValueChange={onChange}
           >
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-full">
               <SelectValue placeholder="Select a fruit" />
             </SelectTrigger>
             <SelectContent>
@@ -86,8 +87,9 @@ const ActualLayoutForm = ({ layouts }: ActualLayoutFormProps) => {
               </SelectGroup>
             </SelectContent>
           </Select>
+          </div>
         </div>
-        <div className="flex w-full">
+        <div className="col-span-1">
           <Button
             onClick={() => onSubmit(actualLayout)}
             variant={"default"}

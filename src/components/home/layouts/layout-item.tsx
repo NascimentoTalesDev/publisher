@@ -12,6 +12,7 @@ const LayoutItem = () => {
     font-family: ${values?.font};
     align-items: center;
     flex-direction: column;
+    /* background: url(${values?.bgImage}); */
     background-color: ${values?.color};
     height: 100%;
     width: 100%;

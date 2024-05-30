@@ -26,10 +26,7 @@ import {
 import { useLayoutValues } from "@/hooks/useLayoutValues";
 import { Layout } from "@/types/Layout";
 import { saveLayout } from "@/app/home/layouts/new/actions";
-
-interface SetLayoutFormProps {
-  userId: string | undefined;
-}
+import UploadFiles from "@/components/UploadFiles";
 
 const formSchema = z.object({
   name: z
@@ -47,9 +44,10 @@ const formSchema = z.object({
   textColorOldPrice: z.string().optional(),
   textColorActualPrice: z.string().optional(),
   textColorLink: z.string().optional(),
+  bgImage: z.string().optional(),
 });
 
-const SetLayoutForm = ({ userId }: SetLayoutFormProps) => {
+const SetLayoutForm = () => {
   const router = useRouter();
   const layoutValues = useLayoutValues();
 
@@ -66,6 +64,7 @@ const SetLayoutForm = ({ userId }: SetLayoutFormProps) => {
       textColorOldPrice: "#000",
       textColorActualPrice: "#FFFFFF",
       textColorLink: "#000",
+      bgImage: "",
     },
   });
 
@@ -165,7 +164,7 @@ const SetLayoutForm = ({ userId }: SetLayoutFormProps) => {
                 render={({ field }) => (
                   <FormItem className="flex items-center gap-3">
                     <FormLabel className="w-[130px]">
-                      Cor de fundo produto:
+                      Cor de fundo do produto:
                     </FormLabel>
                     <FormControl>
                       <Input type="color" disabled={isSubmitting} {...field} />
