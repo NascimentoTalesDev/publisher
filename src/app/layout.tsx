@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`min-w-screen max-w-screen ${font.className}` }>
+      <body className={`min-w-screen max-w-screen bg-white ${font.className}` }>
         <ToastProvider />
           {children}
       </body>

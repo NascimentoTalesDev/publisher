@@ -6,11 +6,7 @@ import Spinner from "./Spinner";
 import { cn } from "./lib/utils";
 import Image from "next/image";
 
-interface UploadFilesPops {
-  onChange: (bgImage: string) => void;
-}
-
-const UploadFiles = ({ onChange }: UploadFilesPops) => {
+const UploadFiles = ({ onChange }) => {
   const [image, setImage] = useState("");
   const [isUploading, setIsUploading] = useState(false);
 
@@ -19,7 +15,6 @@ const UploadFiles = ({ onChange }: UploadFilesPops) => {
       setIsUploading(true);
       const formData = new FormData();
       formData.append("file", ev.target.files[0]);
-      console.log("AQUI");
 
       const response = await axios.post("/api/upload-images", formData, {
         headers: {
@@ -27,7 +22,6 @@ const UploadFiles = ({ onChange }: UploadFilesPops) => {
         },
       });
 
-      console.log("RESPONSE", response);
       setImage(response?.data?.fileName);
 
       onChange(response?.data?.fileName);
@@ -41,8 +35,6 @@ const UploadFiles = ({ onChange }: UploadFilesPops) => {
     setImage("");
     onChange("");
   }
-
-  console.log(image);
 
   return (
     <div className={cn("h-10 w-full border bg-white rounded-[6px]")}>
