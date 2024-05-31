@@ -4,10 +4,10 @@ import AsideHome from "./_components/aside";
 
 const Layout = ({ children }: PropsWithChildren) => {
     return (
-        <div className="bg-one w-screen h-screen pt-[10px] pl-[10px] pr-[5px] pb-[5px]">
+        <div className="bg-one w-screen h-screen pt-[10px] pl-[10px] pr-[5px] pb-[5px] overflow-hidden">
             <div className="flex bg-gradient h-full w-full rounded-[40px]">
                 <AsideHome />
-                <div className="flex flex-col grow pr-[10px] pb-[10px]">
+                <div className="flex flex-col grow pr-[10px] pb-[10px] overflow-hidden">
                     <HeaderHome />
                     <div className="bg-gray-300 rounded-[40px] p-5 grow overflow-hidden">
                         {children}

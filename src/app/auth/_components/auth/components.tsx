@@ -53,7 +53,7 @@ export function AuthSpan ({ children, className }: AuthGenericProps ) {
 
 export function AuthSpanButton ({ children, className, onClick }: AuthSpanButtonProps ) {
     return(
-        <span onClick={onClick} className={cn("text-primary transition-all hover:underline cursor-pointer", className)}>{children}</span>
+        <span onClick={onClick} className={cn("text-white transition-all hover:underline cursor-pointer", className)}>{children}</span>
     )
 }
 

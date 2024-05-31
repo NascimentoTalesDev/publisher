@@ -4,7 +4,7 @@
 
   @layer base {
     :root {
-      --background: 0 0% 100%;
+      --background: 202, 23%, 35%;
       --foreground: 222.2 84% 4.9%;
 
       --card: 0 0% 100%;
@@ -13,7 +13,7 @@
       --popover: 0 0% 100%;
       --popover-foreground: 222.2 84% 4.9%;
 
-      --primary: 222.2 47.4% 11.2%;
+      --primary: 199, 42%, 19%;
       --primary-foreground: 210 40% 98%;
 
       --secondary: 210 40% 96.1%;
@@ -87,6 +87,19 @@
   background: radial-gradient(circle, rgba(77,114,132,1) 0%, rgba(28,56,69,1) 50%);
 }
 
+.bg-blue{
+  background: #1C3845;
+}
+
+.bg-gradient-to-rose{
+  background: rgb(47,139,160);
+  background: linear-gradient(90deg, rgba(47,139,160,1) 0%, rgba(237,204,187,1) 100%);
+}
+
+.gradient-to-blue{
+  background: rgb(237,204,187);
+  background: linear-gradient(90deg, rgba(237,204,187,1) 0%, rgba(47,139,160,1) 100%);
+}
 .slider-range {
   -webkit-appearance: none;
   width: 100%;

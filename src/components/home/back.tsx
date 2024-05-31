@@ -8,7 +8,7 @@ const Back = () => {
     const router = useRouter()
 
     return (
-        <Button variant={"ghost"} onClick={() => router.back()} >
+        <Button variant={"ghost"} className="border-none" onClick={() => router.back()} >
             <Undo className="mr-2 text-neutral-500" />
             Voltar
         </Button>

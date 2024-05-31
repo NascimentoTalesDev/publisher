@@ -25,7 +25,7 @@ const GoogleAuth = ({ variant, text }: GoogleAuthProps ) => {
     }
 
     return (
-        <Button onClick={login} className="gap-2" variant={"outline"}>
+        <Button onClick={login} className="gap-2" variant={"secondary"}>
             <Image src={"/images/google.webp"} width={24} height={24} alt="Google" />
             <span>
                 {loggingIn ? "Logando...": text}
