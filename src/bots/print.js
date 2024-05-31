@@ -10,7 +10,7 @@ export default async function print(product) {
     await page.goto(url)
     await page.setViewport({width: 1080, height: 1920});
     await page.screenshot({ path: `src/images/${newFileName}`});
-    // browser.close()
+    browser.close()
     return 
 }
 
